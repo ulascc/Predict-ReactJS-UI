@@ -11,6 +11,7 @@ import axios from 'axios';
 function Predict() {
 
   const [email, setEmail] = useState('');
+  const [fullname, setFullname] = useState('');
   const [responseData, setResponseData] = useState(null); 
   const navigate = useNavigate();
 
@@ -57,6 +58,8 @@ function Predict() {
           }
           const userEmail = decodedToken.email;
           setEmail(userEmail);
+          const full_name = decodedToken.name;
+          setFullname(full_name);
         } catch (error) {
           console.error('Invalid token');
           navigate("/login");
@@ -97,6 +100,7 @@ function Predict() {
         <Navbar/>
       </div>
       {email && <div>Merhaba {email}</div>}
+      {fullname && <div>Merhaba {fullname}</div>}
       <div className="inputDiv">
         <label>Predict</label>
         <input
