@@ -30,6 +30,7 @@ function PredictionLogs() {
             <th>Method</th>
             <th>Response</th>
             <th>User ID</th>
+            <th>Class ID</th>
           </tr>
         </thead>
         <tbody>
@@ -45,6 +46,7 @@ function PredictionLogs() {
               <td>{log.method}</td>
               <td>{log.response}</td>
               <td>{log.user_id}</td>
+              <td>{log.class_id}</td>
             </tr>
           ))}
         </tbody>
