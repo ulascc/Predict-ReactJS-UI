@@ -28,8 +28,8 @@ function PredictionLogs() {
             <th>Status Code</th>
             <th>Payload</th>
             <th>Response</th>
+            <th>Response ID</th>
             <th>User ID</th>
-            <th>Class ID</th>
           </tr>
         </thead>
         <tbody>
@@ -44,8 +44,8 @@ function PredictionLogs() {
               <td>{log.status_code}</td>
               <td>{log.payload}</td>
               <td>{log.response}</td>
-              <td>{log.user_id}</td>
               <td>{log.class_id}</td>
+              <td>{log.user_id}</td>
             </tr>
           ))}
         </tbody>

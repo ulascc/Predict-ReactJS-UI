@@ -1,11 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import PredictionLogs from './PredictionLogs';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState  } from 'react';
 import { jwtDecode } from 'jwt-decode';
 import { Navbar } from './Navbar';
 
+
 function PredictionHistory() {
   const navigate = useNavigate();
+  const [fullname, setFullname] = useState('');
   const notificationSound = new Audio('/src/assets/token_notification_sound.mp3');
 
   const playNotificationSound = () => {
@@ -30,6 +32,8 @@ function PredictionHistory() {
               alert("you don't have authority");
               navigate("/predict");
             }
+            const full_name = decodedToken.name;
+            setFullname(full_name);
           }
         } catch (error) {
           console.error('Invalid token');
@@ -53,7 +57,7 @@ function PredictionHistory() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar fullname={fullname} />
       <div>
         <h2>Prediction Logs</h2>
       </div>

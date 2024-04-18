@@ -90,19 +90,14 @@ function Predict() {
       onSubmit,
     });
 
-<div>
-        <Navbar/>
-      </div>
   return (
     <>
+    <div>
+        <Navbar fullname={fullname} />
+    </div>
     <form onSubmit={handleSubmit}>
-      <div>
-        <Navbar/>
-      </div>
-      {email && <div>Merhaba {email}</div>}
-      {fullname && <div>{fullname} ne aramıştınız?</div>}
       <div className="inputDiv">
-        <label>Predict</label>
+        <label>What Are You Thinking ?</label>
         <input
           type="text"
           value={values.text}
@@ -116,10 +111,10 @@ function Predict() {
         Predict 
       </button>
       <div>
-        {responseData && <div><h3>Mesajınız: {responseData.text}</h3></div>}
+        {responseData && <div><h3>Your Message: {responseData.text}</h3></div>}
       </div>
       <div>
-        {responseData && <div><h3>İlgili işlem: {responseData.class}</h3></div>}
+        {responseData && <div><h3>AI Answer: {responseData.class}</h3></div>}
       </div>
     </form>
     </>
