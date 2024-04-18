@@ -16,18 +16,17 @@ function PredictionLogs() {
 
   return (
     <div>
-      <h2>Prediction Logs</h2>
       <table>
         <thead>
           <tr>
             <th>ID</th>
-            <th>View</th>
-            <th>Payload</th>
-            <th>Status Code</th>
             <th>Request At</th>
-            <th>Response Time (ms)</th>
+            <th>Response(ms)</th>
+            <th>View</th>
             <th>Path</th>
             <th>Method</th>
+            <th>Status Code</th>
+            <th>Payload</th>
             <th>Response</th>
             <th>User ID</th>
             <th>Class ID</th>
@@ -37,13 +36,13 @@ function PredictionLogs() {
           {logs.map(log => (
             <tr key={log.id}>
               <td>{log.id}</td>
-              <td>{log.view}</td>
-              <td>{log.payload}</td>
-              <td>{log.status_code}</td>
               <td>{log.request_at}</td>
               <td>{log.response_ms}</td>
+              <td>{log.view}</td>
               <td>{log.path}</td>
               <td>{log.method}</td>
+              <td>{log.status_code}</td>
+              <td>{log.payload}</td>
               <td>{log.response}</td>
               <td>{log.user_id}</td>
               <td>{log.class_id}</td>

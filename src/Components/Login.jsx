@@ -1,7 +1,8 @@
-import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
+import axios from 'axios';
+
 
 function Login() {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ function Login() {
       const response = await axios.post('http://127.0.0.1:8000/login', values);
       console.log(response.data);
   
-      // Başarılı giriş durumunda token'ı sakla
+      
       const { access_token } = response.data;
       if (access_token) {
         localStorage.setItem('accessToken', access_token); // Token'ı localStorage'e saklama

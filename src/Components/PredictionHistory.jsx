@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Navbar } from './Navbar';
-import { jwtDecode } from 'jwt-decode';
 import PredictionLogs from './PredictionLogs';
+import React, { useEffect } from 'react';
+import { jwtDecode } from 'jwt-decode';
+import { Navbar } from './Navbar';
 
 function PredictionHistory() {
   const navigate = useNavigate();
@@ -55,7 +55,7 @@ function PredictionHistory() {
     <div>
       <Navbar />
       <div>
-        PredictHistory
+        <h2>Prediction Logs</h2>
       </div>
       <PredictionLogs />
     </div>

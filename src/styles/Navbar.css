@@ -3,9 +3,9 @@
     display: flex;
     padding: 25px;
     align-items: center;
-    background-color: rgb(83, 83, 83);
+    background-color: #4a5568;
     padding-left: 150px;
-    justify-content: space-between; /* Ekstra stil */
+    justify-content: space-between;
   }
   
   .navbar .main {

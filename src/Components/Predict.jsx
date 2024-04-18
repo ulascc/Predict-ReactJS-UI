@@ -1,6 +1,5 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { Link, useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { predictSchema } from '../schemas';
 import { jwtDecode } from 'jwt-decode';
 import { useFormik } from 'formik';
@@ -101,7 +100,7 @@ function Predict() {
         <Navbar/>
       </div>
       {email && <div>Merhaba {email}</div>}
-      {fullname && <div>Merhaba {fullname}</div>}
+      {fullname && <div>{fullname} ne aramıştınız?</div>}
       <div className="inputDiv">
         <label>Predict</label>
         <input
@@ -117,10 +116,10 @@ function Predict() {
         Predict 
       </button>
       <div>
-        {responseData && <div><h3>{responseData.text}</h3></div>}
+        {responseData && <div><h3>Mesajınız: {responseData.text}</h3></div>}
       </div>
       <div>
-        {responseData && <div><h3>{responseData.class}</h3></div>}
+        {responseData && <div><h3>İlgili işlem: {responseData.class}</h3></div>}
       </div>
     </form>
     </>
