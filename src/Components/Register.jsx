@@ -10,7 +10,7 @@ function Register() {
 
   const handleSubmit = async (values,actions) => {
       try {      
-        const response = await axios.post('http://127.0.0.1:8000/register', values);
+        const response = await axios.post('http://127.0.0.1:8001/register', values);
         console.log(response.data); 
 
         alert('Kayıt başarılı!');

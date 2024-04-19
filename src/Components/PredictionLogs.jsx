@@ -5,7 +5,7 @@ function PredictionLogs() {
   const [logs, setLogs] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/get_prediction_logs')
+    axios.get('http://127.0.0.1:8001/get_prediction_logs')
       .then(response => {
         setLogs(response.data);
       })
