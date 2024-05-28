@@ -1,0 +1,18 @@
+.predict-container {
+    padding: 20px;
+    max-height: 80vh; 
+    overflow-y: auto;
+  }
+  
+  .table-container {
+    max-height: 700px;
+    width: 100%;
+    overflow: auto; 
+    margin-top: 20px; 
+  }
+  
+  .MuiDataGrid-root {
+    background-color: white; 
+    transform: none; 
+    animation: none; 
+  }

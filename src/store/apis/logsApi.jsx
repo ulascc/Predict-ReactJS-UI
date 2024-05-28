@@ -38,6 +38,15 @@ const logsApi = createApi({
         },
       }),
 
+      deletePredictionLogs: builder.mutation({
+        invalidatesTags: ['fetchPredictLogsById'],
+        query: (logIds) => ({
+          url: '/prediction_log_delete/',
+          method: 'DELETE',
+          body: logIds,
+        }),
+      }),
+
     };
   },
 });
@@ -47,6 +56,7 @@ const logsApi = createApi({
 export const {
   useFetchAllLogsQuery,
   useFetchLogsQuery,
-  useAddNewPredictionMutation
+  useAddNewPredictionMutation,
+  useDeletePredictionLogsMutation
 } = logsApi;
 export { logsApi };

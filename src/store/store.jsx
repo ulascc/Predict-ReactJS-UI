@@ -19,7 +19,8 @@ setupListeners(store.dispatch);
 export {
   useFetchLogsQuery,
   useFetchAllLogsQuery,
-  useAddNewPredictionMutation
+  useAddNewPredictionMutation,
+  useDeletePredictionLogsMutation
 } from './apis/logsApi';
 
 

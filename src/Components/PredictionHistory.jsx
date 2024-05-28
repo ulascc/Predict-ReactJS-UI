@@ -58,9 +58,6 @@ function PredictionHistory() {
   return (
     <div>
       <Navbar fullname={fullname} />
-      <div>
-        <h2>Prediction Logs</h2>
-      </div>
       <PredictionLogs />
     </div>
   );
