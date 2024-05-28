@@ -16,10 +16,22 @@
 .navbar .mainLink {
   margin-left: auto;
   margin-right: 50px;
+  display: flex; 
+  align-items: center;
+}
+
+.navbar .mainLink .separator {
+  margin: 0 10px; 
+}
+
+.navbar .mainLink a {
+  margin-right: 10px;
+  white-space: nowrap
 }
 
 .mainLink span {
   margin-right: 10px;
+  white-space: nowrap
 }
 
 .navbar a {

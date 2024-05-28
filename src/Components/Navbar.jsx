@@ -12,11 +12,13 @@ export const Navbar = ({ fullname }) => {
     <div className="navbar">
       <div className="main">
         <div className="mainLink">
-          <span>Hello  {fullname}  |</span> 
+          <span>Hello {fullname}</span> 
+          <span className="separator">|</span>
           <Link to="/predict">Predict</Link>
+          <span className="separator">|</span> 
           <Link to="/predictionHistory">Prediction History</Link>
           <button type="button" onClick={handleLogout}>
-            Log Out
+              Log Out
           </button>
         </div>
       </div>

@@ -126,3 +126,55 @@ th {
   line-height: 2px;
   color: aqua;
 }
+
+.input-button-container {
+  display: flex;
+}
+
+.inputDiv {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.inputDiv label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.inputDiv input {
+  width: 100%;
+  padding: 8px 7px;
+  font-size: 16px;
+  border: 2px solid #5773a3;
+  background-color: #4a5568;
+  color: white;
+  margin: 5px 0px;
+  outline: none;
+  border-radius: 10px;
+}
+
+.input-error {
+  border-color: #fc8181;
+}
+
+.error {
+  color: #fc8181;
+  font-size: 12px;
+  text-align: left;
+}
+
+button {
+  padding: 8px 8px;
+  margin: 16px 0px;
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+}
+
+h3 {
+  font-size: 19px;
+}

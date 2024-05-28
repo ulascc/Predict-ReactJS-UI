@@ -8,8 +8,10 @@ import axios from 'axios';
 import {  useAddNewPredictionMutation, useAddPredictionMutation, useFetchLogsQuery } from '../store/store.jsx';
 import PredictionLogs from './PredictionLogs';
 import Button from '@mui/material/Button';
-import '../styles/Predict.css'; // Create and import a CSS file for custom styles
+import '../styles/Predict.css'; 
 import '../App.css'; 
+import { TbMessageChatbot } from "react-icons/tb";
+import { FaRegUser } from "react-icons/fa";
 
 function Predict() {
   const [email, setEmail] = useState('');
@@ -102,36 +104,40 @@ function Predict() {
 
   return (
     <>
-      <Navbar fullname={fullname} />
-      <div className="predict-container" style={{marginTop:'auto'}}>
-        <form onSubmit={handleSubmit}>
-          <div className="inputDiv">
-            <label>What Are You Thinking?</label>
-            <input
-              type="text"
-              value={values.text}
-              onChange={handleChange}
-              id="text"
-              className={errors.text ? 'input-error' : ''}
-            />
-            {errors.text && <p className="error">{errors.text}</p>}
-          </div>
-          
-        </form>
-        <div style={{ textAlign: 'center', margin: '10px 0' }}>
-    
-    <Button variant="contained" color="success" onClick={handlePredict}>Predict</Button>
-</div>
-        <div>
-          {responseData && <div><h3>Your Message: {responseData.text}</h3></div>}
-          {responseData && <div><h3>AI Answer: {responseData.class}</h3></div>}
+  <Navbar fullname={fullname} />
+  <div className="predict-container" style={{marginTop:'auto'}}>
+    <form onSubmit={handleSubmit}>
+      <div className="input-button-container">
+        <div className="inputDiv">
+          <label>What Are You Thinking?</label>
+          <input
+            type="text"
+            value={values.text}
+            onChange={handleChange}
+            id="text"
+            className={errors.text ? 'input-error' : ''}
+          />
+          {errors.text && <p className="error">{errors.text}</p>}
         </div>
         <div>
-          <h3>Prediction Logs</h3>
-          <PredictionLogs user_id={userId} />
+          <Button variant="contained" color="success" style={{marginTop: '25px'}}onClick={handlePredict}>Predict</Button>
         </div>
       </div>
-    </>
+      {responseData && (
+        <>
+          <div><h3><FaRegUser /> Your Message: {responseData.text}</h3></div>
+          <div><h3><TbMessageChatbot /> AI Answer: {responseData.class}</h3></div>
+        </>
+      )}
+    </form>
+    <div>
+      <div>
+        <h3>Prediction Logs</h3>
+        <PredictionLogs user_id={userId} />
+      </div>
+    </div>
+  </div>
+</>
   );
 }
 
