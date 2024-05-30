@@ -108,9 +108,10 @@ function Predict() {
   <div className="predict-container" style={{marginTop:'auto'}}>
     <form onSubmit={handleSubmit}>
       <div className="input-button-container">
-        <div className="inputDiv">
+        <div className="inputDiv" >
           <label>What Are You Thinking?</label>
           <input
+            style={{ marginBottom: '20px' }}
             type="text"
             value={values.text}
             onChange={handleChange}
@@ -118,17 +119,22 @@ function Predict() {
             className={errors.text ? 'input-error' : ''}
           />
           {errors.text && <p className="error">{errors.text}</p>}
+          {responseData && (
+            <>
+            <div style={{ marginBottom: '10px' }}>
+              <h3><FaRegUser /> Your Message: {responseData.text}</h3>
+            </div>
+            <div>
+              <h3><TbMessageChatbot /> AI Answer: {responseData.class}</h3>
+            </div>
+          </>
+          )}
         </div>
         <div>
           <Button variant="contained" color="success" style={{marginTop: '25px'}}onClick={handlePredict}>Predict</Button>
         </div>
       </div>
-      {responseData && (
-        <>
-          <div><h3><FaRegUser /> Your Message: {responseData.text}</h3></div>
-          <div><h3><TbMessageChatbot /> AI Answer: {responseData.class}</h3></div>
-        </>
-      )}
+      
     </form>
     <div>
       <div>
